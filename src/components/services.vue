@@ -2,7 +2,7 @@
     <div>
         <!-- Heading -->
 			<div id="heading" >
-				<h1>User Registration</h1>
+				<h1>User List</h1>
 			</div>
 
 		<!-- Main -->
@@ -17,7 +17,7 @@
 								
 									<input type="password" placeholder="Password" v-model="newpassword" name="newpassword" id="newpassword" class="form-control" validate="'required|min:4'"/>.
 								
-									<button @click="registerAction">Sign Up</button>
+									<button>Sign Up</button>
 								</form>
 							</div> 
 					</div>
@@ -27,34 +27,14 @@
 </template>
 <script>
 export default {
-	name:'register',
-	data() {
-		return{
-			newemail : '',
-			newpassword: '',
-			errors:'',
-			serverErrors:''
-		}
-	},
-    mounted() {
-		jQuery('body').removeClass('is-menu-visible');
-	},
-	methods: {
-         registerAction() {
-			this.$store.dispatch("userRegister", {
-				newemail: this.newemail,
-				newpassword: this.newpassword
-			})
-			.then(response => {
-				this.successMessage = "Registered Successfully!"
-				this.$router.push({name:'ourApp'})
-				console.log('user registered')
-			})
-			.catch(error => {
-				this.serverErrors = object.values(errors.data.error)
-			})
-		}
+    name:'services',
+    data(){
+        return{
+            newemail:'',
+            newpassword:''
+        }
     }
+	
 }
 </script>
 <style lang="scss" scoped>
