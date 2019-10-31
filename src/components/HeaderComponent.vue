@@ -10,8 +10,10 @@
             <nav id="menu">
                 <ul class="links">
                     <li><router-link to='/'>Home</router-link></li>
+                    <li><router-link to='/services'>Our App</router-link></li>
                     <li><router-link to='/register'>Register</router-link></li>
-                    <li><router-link to='/login'>Login</router-link></li>
+                    <li v-if="token"><a v-on:click="logout">Logout</a></li>
+                    <li v-else><router-link to='/login'>Login</router-link></li>
                 </ul>
             </nav>
     </div>
@@ -20,6 +22,12 @@
 <script>
 
 export default {
+  data () {
+    let toekn = localStorage.getItem('token');
+		return {
+			token:toekn
+		}
+	},  
   mounted(){
     this.verifyAuth();
   },
@@ -36,6 +44,15 @@ export default {
       //console.log('====>'+val);
       if(toekn){
           this.$router.push('/');
+      }
+    },
+    logout: function(){
+      //alert('logout');
+      let toeken = localStorage.setItem('token','');
+      
+      if(!toeken){
+          localStorage.setItem('uid','');
+          this.$router.push('/login');
       }
     }
     

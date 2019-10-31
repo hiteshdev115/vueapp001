@@ -2,37 +2,53 @@
    <article>
        <div class="container"> 
             <div class="login">
-                <form class="sign-in" @submit.prevent="login">
+                <form class="sign-in">
                     <h2>Sign In</h2>
                     <div>Use your account</div>
-                    <input type="email" placeholder="Email" v-model="email" name="email" class="form-control" :class="{ 'is-invalid': submitted && !email }"/>
-                    <input type="password" placeholder="Password" v-model="password" name="password" class="form-control" :class="{ 'is-invalid': submitted && !password }"/>.
+                    <input type="email" placeholder="Email" v-model="email" name="email" id="email" class="form-control"/>
+                    <input type="password" placeholder="Password" v-model="password" name="password" id="password" class="form-control"/>
                     <a href="#">Forgot Password?</a>
-                    <button>Sign In</button>
+                    <button type="button" @click="loginAction">Sign In</button>
                 </form>
-            </div>          
-           
+            </div> 
        </div>
    </article>
 </template>
 <script>
-import axios from 'axios';
+//import axios from 'axios';
 
 export default {
-	data () {
+    data () {
 		return {
             email:'',
-            password:'',
-            submitted: false
+            password:''
 		}
+    },
+    created() {
+        this.$store.subscribe((mutation, state) => {
+            console.log("mutation type:-"+mutation.type);
+        })
     },
     mounted() {
         //alert('home');
 		jQuery('body').removeClass('is-menu-visible');
-		this.checklogin();
+		//this.checklogin();
 	},  
 	methods: {
-		async login (e) {
+        loginAction(){
+            console.log(this.email+"==="+this.password);
+            //login action code here
+            this.$store.dispatch('getToken',{
+                email: this.email,
+                password: this.password
+            })
+            .then(response => {
+                console.log('get success');
+                console.log(response);
+                this.$router.push('/')
+            })
+        },
+        /*async login (e) {
             console.log('submit');
             this.submitted = true;
             const { email, password } = this;
@@ -52,7 +68,7 @@ export default {
             if(toekn){
                 this.$router.push('/');
             }
-        }
+        }*/
     }
     
 }

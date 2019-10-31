@@ -1,35 +1,90 @@
-/*import Vue from 'vue'
-import Router from 'vue-router'
-import homeCompontnt from '@/components/home'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from '@/components/home.vue';
+import Services from '@/components/services.vue';
+import Register from '@/components/register.vue';
+import Login from '@/components/login.vue';
+import store from '@/store';
 
-Vue.use(Router)
+Vue.use(Router);
 
-export default new Router({
+const router = new Router({
+  mode: 'history',
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: homeCompontnt
+    { 
+      path: '/', 
+      name:'home', 
+      component: Home 
+    },
+    { 
+      path: '/register',
+      name:'register', 
+      component: Register,
+      meta:{
+        needsAuth: false,
+      } 
+    },
+    { 
+      path: '/services',
+      name:'services', 
+      component: Services,
+      meta:{
+        needsAuth: true,
+      } 
+    },
+    { 
+      path: '/login',
+      name:'login', 
+      component: Login,
     }
   ]
 })
 
-const routes = [];
 
-export default routes;*/
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.needsAuth);
+  if(requiresAuth) {
+    //console.log('===>'+store.getters.loggedIn);
+    if(!store.getters.loggedIn){
+      next('/login')
+    } else {
+      //console.log(to.fullPath);
+      next()
+    }
+  } else {
+    next()
+  }
+})
 
 
-import Home from '@/components/home.vue';
-import Register from '@/components/register.vue';
-import Login from '@/components/login.vue';
-
-//import 'static/css/main.css';
-
-const routes = [
-    { path: '/', name:'home', component: Home },
-    { path: '/register', component: Register },
-    { path: '/login', component: Login },
-];
+/*const routes = [
+    { 
+      path: '/', 
+      name:'home', 
+      component: Home 
+    },
+    { 
+      path: '/register',
+      name:'register', 
+      component: Register,
+      meta:{
+        needsAuth: false,
+      } 
+    },
+    { 
+      path: '/services',
+      name:'services', 
+      component: Services,
+      meta:{
+        needsAuth: true,
+      } 
+    },
+    { 
+      path: '/login',
+      name:'login', 
+      component: Login,
+    },
+];*/
 
 //Javascript
 import '@/assets/js/jquery.min.js';
@@ -37,4 +92,4 @@ import '@/assets/js/browser.min.js';
 import '@/assets/js/util.js';
 import '@/assets/js/main.js';
 
-export default routes;
+export default router

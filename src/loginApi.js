@@ -24,8 +24,9 @@ exports.login = function(req, res)
 			    });
         		if(rows.length > 0)
         		{
-        			rows[0].token = token;
-            		var resultData = JSON.stringify({'success': true, 'data': rows[0]});
+					rows[0].access_token = token;
+					//console.log(rows);
+            		var resultData = JSON.stringify({'success': true, 'access_token':token, 'userdetails': rows[0]});
     				res.send(resultData);
         		} else {
         			var resultData = JSON.stringify({'success': false, 'data': "No Data available"});
