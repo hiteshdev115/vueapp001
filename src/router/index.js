@@ -42,6 +42,7 @@ const router = new Router({
 
 
 router.beforeEach((to, from, next) => {
+  store.dispatch('checkToken');
   const requiresAuth = to.matched.some(record => record.meta.needsAuth);
   if(requiresAuth) {
     //console.log('===>'+store.getters.loggedIn);

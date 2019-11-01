@@ -10,14 +10,16 @@
 				<div class="inner">
 					<div class="container"> 
 							<div class="login">
-								<form class="sign-in" @submit.prevent="validateSubmit">
+								<form class="sign-in">
 									<h2>Sign Up</h2>
 									<div>Create your account</div>
+                                    <div class="alert alert-success" role="alert" v-if="successMessage">
+                                    {{successMessage}}
+                                    </div>
+                                    <input type="text" placeholder="username" v-model="username" name="username" id="username" class="form-control" validate="'required|min:4'"/>
 									<input type="email" placeholder="Email" v-model="newemail" name="newemail" id="newemail" class="form-control" validate="'required|min:4'"/>
-								
 									<input type="password" placeholder="Password" v-model="newpassword" name="newpassword" id="newpassword" class="form-control" validate="'required|min:4'"/>.
-								
-									<button @click="registerAction">Sign Up</button>
+									<button type="button" @click="registerAction">Sign Up</button>
 								</form>
 							</div> 
 					</div>
@@ -30,10 +32,12 @@ export default {
 	name:'register',
 	data() {
 		return{
+            username:'',
 			newemail : '',
 			newpassword: '',
 			errors:'',
-			serverErrors:''
+            serverErrors:'',
+            successMessage: ''
 		}
 	},
     mounted() {
@@ -42,12 +46,13 @@ export default {
 	methods: {
          registerAction() {
 			this.$store.dispatch("userRegister", {
-				newemail: this.newemail,
+                username: this.username,
+                newemail: this.newemail,
 				newpassword: this.newpassword
 			})
 			.then(response => {
 				this.successMessage = "Registered Successfully!"
-				this.$router.push({name:'ourApp'})
+				//this.$router.push({name:'register'})
 				console.log('user registered')
 			})
 			.catch(error => {
@@ -60,13 +65,13 @@ export default {
 <style lang="scss" scoped>
     .container{
         position: relative;
-        widows: 768px;
-        height: 480px;
+        width: 100%;
+        
         overflow: hidden;
         border-radius: 10px;
         box-shadow: 0 15px 30px rgba(0, 0, 0, .0),
                     0 10px 10px rgba(0, 0, 0, .0);
-        background: linear-gradient(to bottom,#5f1d1d54, rgba(189, 131, 131, 0.5));
+        
     }
     h2{
         margin: 0;
@@ -106,15 +111,15 @@ export default {
     }
 
     form{
-        
+        margin: 0;
         top: 0;
         display: flex;
         align-items: center;
         justify-content: space-around;
         flex-direction: column;
         padding: 90px 60px;
-        width: calc(50% - 120px);
-        height: calc(100% - 180px);
+        width: 100%;
+        height: 100%;
         background: linear-gradient(to bottom, #ed8686, #97979733);
         transition: all .5s ease-in-out;
     }

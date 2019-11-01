@@ -14,16 +14,17 @@ let store = new Vuex.Store({
     },
     getters:{ 
         loggedIn(state){
-            var accessToken = localStorage.getItem('access_token');
+            /*var accessToken = localStorage.getItem('access_token');
             if(accessToken){
                 Vue.set(state, 'token', accessToken);
-            }
+            }*/
             return (state.token ? true : false);            
         },        
     },
     mutations: {
         updateToken (state, token) {
             Vue.set(state, 'token', token);
+            console.log('updated state token ===>'+state.token);
         },
         retriveToken(state, token){
             Vue.set(state, 'token', token);
@@ -35,6 +36,11 @@ let store = new Vuex.Store({
 
     },
     actions:{
+        checkToken(context){
+            console.log('checkToken');
+            var accssToken = localStorage.getItem('access_token');
+            context.commit('updateToken',accssToken)
+        },
         getToken(context, credentials) {
             console.log('get Token');   
             return new Promise((resolve, reject) => {
@@ -59,14 +65,12 @@ let store = new Vuex.Store({
         userRegister(context, credentials){
             return new Promise((resolve, reject) => {
                 axios.post('/register', {
+                    username: credentials.username,
                     newemail : credentials.newemail,
-                    newpassword : credentials,newpassword
+                    newpassword : credentials.newpassword
                 })
                 .then(response => {
                     resolve(response)
-                    this.$router.push({
-                        name: 'ourApp'
-                    })
                 })
                 .catch(error => {
                     reject(error)

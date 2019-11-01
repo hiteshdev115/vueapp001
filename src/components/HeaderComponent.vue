@@ -12,8 +12,8 @@
                     <li><router-link to='/'>Home</router-link></li>
                     <li><router-link to='/services'>Our App</router-link></li>
                     <li><router-link to='/register'>Register</router-link></li>
-                    <li v-if="token"><a v-on:click="logout">Logout</a></li>
-                    <li v-else><router-link to='/login'>Login</router-link></li>
+                    <li v-if="loggedIn === true"><a v-on:click="logout">Logout</a></li>
+                    <li v-else><router-link to='/login'>Login{{loggedIn}}</router-link></li>
                 </ul>
             </nav>
     </div>
@@ -23,11 +23,19 @@
 
 export default {
   data () {
-    let toekn = localStorage.getItem('token');
+    let token = localStorage.getItem('token');
 		return {
-			token:toekn
+			token:token
 		}
-	},  
+  },  
+  computed: {
+    //check user is login or not
+    loggedIn: function () {
+      //console.log('===>'+this.$store.getters.loggedIn);
+      return this.$store.getters.getLoggedIn ;
+    }  
+
+  },
   mounted(){
     this.verifyAuth();
   },

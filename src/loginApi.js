@@ -38,4 +38,32 @@ exports.login = function(req, res)
         });
 };
 
+exports.register = function(req, res)
+{
+    console.log("register user action");
+    //console.log(req.body);
+    
+    var data = { 
+                username  : req.body.username,
+                email  : req.body.newemail,
+                password : req.body.newpassword
+                //profile_pic  : profile_photo
+            };
+    console.log("=======");
+    console.log(data);
+    connection.query("INSERT INTO user SET ?", [data], function(err, result)
+    {
+    	console.log(err);
+		if (err) {
+			var resultData = JSON.stringify({'failed': true, 'data': "Something went wrong"});
+			res.send(resultData);
+		} else {
+			var resultData = JSON.stringify({'success': true, 'data': result});
+			console.log('success');
+			res.send(resultData);
+		}     	
+      
+    });   
+};
+
 
