@@ -6,18 +6,21 @@
 			</div>
 
 		<!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="inner">
+			<section id="main">
+				<div>
 					<div class="container"> 
 							<div class="login">
-								<form class="sign-in" @submit.prevent="validateSubmit">
+								<form class="sign-in">
 									<h2>Sign Up</h2>
-									<div>Create your account</div>
-									<input type="email" placeholder="Email" v-model="newemail" name="newemail" id="newemail" class="form-control" validate="'required|min:4'"/>
+									<div class="alert alert-success" role="alert">
+                                        {{successMessage}}
+                                    </div>
+									<input type="text" placeholder="Name" v-model="username" name="username" id="username" class="form-control" validate="'required|min:4'"/>
+                                    <input type="email" placeholder="Email" v-model="newemail" name="newemail" id="newemail" class="form-control" validate="'required|min:4'"/>
 								
 									<input type="password" placeholder="Password" v-model="newpassword" name="newpassword" id="newpassword" class="form-control" validate="'required|min:4'"/>.
 								
-									<button @click="registerAction">Sign Up</button>
+									<button type="button" @click="registerAction">Sign Up</button>
 								</form>
 							</div> 
 					</div>
@@ -30,10 +33,12 @@ export default {
 	name:'register',
 	data() {
 		return{
+            username:'',
 			newemail : '',
 			newpassword: '',
 			errors:'',
-			serverErrors:''
+            serverErrors:'',
+            successMessage:''
 		}
 	},
     mounted() {
@@ -42,12 +47,13 @@ export default {
 	methods: {
          registerAction() {
 			this.$store.dispatch("userRegister", {
-				newemail: this.newemail,
+                username: this.username,
+                newemail: this.newemail,
 				newpassword: this.newpassword
 			})
 			.then(response => {
 				this.successMessage = "Registered Successfully!"
-				this.$router.push({name:'ourApp'})
+				//this.$router.push({name:'register'})
 				console.log('user registered')
 			})
 			.catch(error => {
@@ -60,9 +66,8 @@ export default {
 <style lang="scss" scoped>
     .container{
         position: relative;
-        widows: 768px;
-        height: 480px;
         overflow: hidden;
+        width: 100%;
         border-radius: 10px;
         box-shadow: 0 15px 30px rgba(0, 0, 0, .0),
                     0 10px 10px rgba(0, 0, 0, .0);

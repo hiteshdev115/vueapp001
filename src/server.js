@@ -34,6 +34,8 @@ var log = require('./loginApi');
 
 
 app.post('/api/login', log.login);
+app.post('/api/register', log.register);
+app.post('/api/getUserList', log.getUserList);
 
 
 

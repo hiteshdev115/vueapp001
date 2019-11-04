@@ -6,18 +6,22 @@
 			</div>
 
 		<!-- Main -->
-			<section id="main" class="wrapper">
+			<section id="main">
 				<div class="inner">
 					<div class="container"> 
 							<div class="login">
 								<form class="sign-in" @submit.prevent="validateSubmit">
-									<h2>Sign Up</h2>
-									<div>Create your account</div>
-									<input type="email" placeholder="Email" v-model="newemail" name="newemail" id="newemail" class="form-control" validate="'required|min:4'"/>
-								
-									<input type="password" placeholder="Password" v-model="newpassword" name="newpassword" id="newpassword" class="form-control" validate="'required|min:4'"/>.
-								
-									<button>Sign Up</button>
+									<h2>All Authenticated User List</h2>
+									<table class="tbl">
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
+                                        <tr v-for="user in userList" :key="user.id">
+                                            <td>{{user.username}}</td>
+                                            <td>{{user.email}}</td>
+                                            <td>{{user.password}}</td>
+                                        </tr>
+									</table>
 								</form>
 							</div> 
 					</div>
@@ -30,9 +34,20 @@ export default {
     name:'services',
     data(){
         return{
-            newemail:'',
-            newpassword:''
+            userList : {}
         }
+    },
+    mounted(){
+        this.getUserList();
+    },
+    methods: {
+        getUserList(){
+           this.$store.dispatch('getUserList')
+            .then(response => {
+                this.userList = response.data.userdetails
+                console.log(response.data);                
+            })
+        },
     }
 	
 }
@@ -41,12 +56,15 @@ export default {
     .container{
         position: relative;
         widows: 768px;
-        height: 480px;
+        
         overflow: hidden;
         border-radius: 10px;
         box-shadow: 0 15px 30px rgba(0, 0, 0, .0),
                     0 10px 10px rgba(0, 0, 0, .0);
         background: linear-gradient(to bottom,#5f1d1d54, rgba(189, 131, 131, 0.5));
+    }
+    .inner{
+        width: 100%;
     }
     h2{
         margin: 0;
@@ -61,7 +79,10 @@ export default {
         margin: 15px 0;
         font-size: 1rem;
     }
-
+    .tbl{
+        padding: 10px 10px;
+        margin-top: 40px;
+    }
     button{
         border-radius: 20px;
         border: 1px solid #0a0a0a;
@@ -92,10 +113,9 @@ export default {
         align-items: center;
         justify-content: space-around;
         flex-direction: column;
-        padding: 90px 60px;
+        padding: 20px 20px;
         width: calc(50% - 120px);
         height: calc(100% - 180px);
-        background: linear-gradient(to bottom, #ed8686, #97979733);
         transition: all .5s ease-in-out;
     }
     div{

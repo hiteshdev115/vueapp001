@@ -45,6 +45,7 @@ export default {
             .then(response => {
                 console.log('get success');
                 console.log(response);
+                
                 this.$router.push('/')
             })
         },

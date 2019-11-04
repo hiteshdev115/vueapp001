@@ -59,14 +59,12 @@ let store = new Vuex.Store({
         userRegister(context, credentials){
             return new Promise((resolve, reject) => {
                 axios.post('/register', {
+                    username : credentials.username,
                     newemail : credentials.newemail,
-                    newpassword : credentials,newpassword
+                    newpassword : credentials.newpassword
                 })
                 .then(response => {
                     resolve(response)
-                    this.$router.push({
-                        name: 'ourApp'
-                    })
                 })
                 .catch(error => {
                     reject(error)
@@ -76,27 +74,23 @@ let store = new Vuex.Store({
         destroyToken(context){
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
             if(context.getters.loggedIn){
-                console.log("=====Distroy Token=====");
-                console.log(context.getters.loggedIn);
-
                 let abc = localStorage.removeItem('access_token')
-                
                 context.commit('distroyToken')
-                /*return new Promise((resolve, reject) => {
-                    axios.post('/logout')
-                    .then(response => {
-                        localStorage.removeItem('access_token')
-                        context.commit('distroyToken')
-                        resolve(response)
-                    })
-                    .catch(error => {
-                        localStorage.removeItem('access_token')
-                        context.commit('distroyToken')
-                        reject(error)
-                    })
-                })*/
             }
-        }
+        },
+        getUserList(context) {
+            return new Promise((resolve, reject) => {
+                axios.post('/getUserList')
+                .then(response => {
+                    //console.log(response);
+                    resolve(response)
+                })
+                .catch(error => {
+                    //console.log(error)
+                    reject(error)
+                })
+            })
+        },
     }
 })
 export default store

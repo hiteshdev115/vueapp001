@@ -12,7 +12,7 @@
                     <li><router-link to='/'>Home</router-link></li>
                     <li><router-link to='/services'>Our App</router-link></li>
                     <li><router-link to='/register'>Register</router-link></li>
-                    <li v-if="token"><a v-on:click="logout">Logout</a></li>
+                    <li class="logout" v-if="user"><a v-on:click="logout">Logout</a></li>
                     <li v-else><router-link to='/login'>Login</router-link></li>
                 </ul>
             </nav>
@@ -25,10 +25,26 @@ export default {
   data () {
     let toekn = localStorage.getItem('token');
 		return {
-			token:toekn
+      token:toekn,
+      user: this.getToken
 		}
-	},  
+  },  
+  computed: {
+    getToken: function () {
+        console.log('==Computed==>'+this.$store.getters.loggedIn);
+        this.user = this.$store.getters.loggedIn;
+        return this.$store.getters.loggedIn;
+    },
+  },
+  watch : {
+   getToken: function () {
+        console.log('===watch'+this.$store.getters.loggedIn);
+        this.user = this.$store.getters.loggedIn;
+        return this.$store.getters.loggedIn;
+    }
+  },  
   mounted(){
+  //  console.log('===>'+this.getToken);
     this.verifyAuth();
   },
   methods: {
@@ -45,16 +61,15 @@ export default {
       if(toekn){
           this.$router.push('/');
       }
-    },
-    logout: function(){
-      //alert('logout');
-      let toeken = localStorage.setItem('token','');
-      
-      if(!toeken){
-          localStorage.setItem('uid','');
-          this.$router.push('/login');
-      }
-    }
+    },    
+    logout(){
+            console.log('logout');
+            //login action code here
+            this.$store.dispatch('destroyToken')
+            .then(response => {
+                this.$router.push('/')
+            })
+        },
     
   }
   
@@ -63,6 +78,9 @@ export default {
 <style scoped>
 .colorlogo{
     color: rgb(245, 4, 4);
+}
+.logout{
+  cursor: pointer;
 }
 </style>
 

@@ -38,4 +38,55 @@ exports.login = function(req, res)
         });
 };
 
+exports.register = function(req, res)
+{
+    console.log("register action");
+	
+	var data = { 
+                username  : req.body.username,
+                email  : req.body.newemail,
+                password : req.body.newpassword
+            };
+    console.log(data);
+    connection.query("INSERT INTO user SET ?", [data], function(err, result)
+    {
+        console.log(err);
+      if (err) {
+      	var resultData = JSON.stringify({'failed': true, 'data': "Something went wrong"});
+        res.send(resultData);
+      } else {
+      	var resultData = JSON.stringify({'success': true, 'data': result});
+        console.log('success');
+        res.send(resultData);
+      }
+      	
+      
+    });   
+};
+
+exports.getUserList = function(req, res)
+{
+        console.log('get user list');
+        
+        var queryString = 'SELECT * FROM user';
+        
+        connection.query(queryString, function(err,rows)
+        {    
+        	//console.log(rows);
+          if (err) 
+          {
+           	console.log('in Error');
+        		var resultData = JSON.stringify({'success': false, 'data': "Problem in fetch data"});
+    			  res.send(resultData);
+        	} 
+          else if(rows.length > 0)
+          {
+					    var resultData = JSON.stringify({'success': true, 'userdetails': rows});
+    				  res.send(resultData);
+        	} else {
+        			var resultData = JSON.stringify({'success': false, 'data': "No Data available"});
+    				  res.send(resultData);
+        	}
+        });
+};
 
