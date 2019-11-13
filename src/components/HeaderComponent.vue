@@ -1,7 +1,7 @@
 <template>
     <div>    
             <header id="header">
-                <a class="logo" href="index.html">Clever<span class="colorlogo">samurai&trade;</span></a>
+                <a class="logo" href="/">Clever<span class="colorlogo">samurai&trade;</span></a>
                 <nav>
                     <a href="javascript:void(0);" id="menu_1" @click="handleClick">Menu</a>
                 </nav>
@@ -67,7 +67,7 @@ export default {
             //login action code here
             this.$store.dispatch('destroyToken')
             .then(response => {
-                this.$router.push('/')
+                //this.$router.push('/')
             })
         },
     

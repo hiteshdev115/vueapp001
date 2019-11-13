@@ -15,12 +15,21 @@
 									<div class="alert alert-success" role="alert">
                                         {{successMessage}}
                                     </div>
-									<input type="text" placeholder="Name" v-model="username" name="username" id="username" class="form-control" validate="'required|min:4'"/>
-                                    <input type="email" placeholder="Email" v-model="newemail" name="newemail" id="newemail" class="form-control" validate="'required|min:4'"/>
-								
-									<input type="password" placeholder="Password" v-model="newpassword" name="newpassword" id="newpassword" class="form-control" validate="'required|min:4'"/>.
-								
-									<button type="button" @click="registerAction">Sign Up</button>
+									<input type="text" placeholder="Name" v-model="username" v-model.trim="$v.username.$model" name="username" id="username" class="form-control" :class="{ 'input-error': $v.username.$error }"/>
+                                    <div class="error" v-if="!$v.username.required">Username is required</div>
+                                    
+                                    <input type="email" placeholder="Email" v-model="newemail" v-model.trim="$v.newemail.$model" name="newemail" id="newemail" class="form-control" :class="{ 'input-error': $v.newemail.$error }"/>
+								    <div class="error" v-if="!$v.newemail.required">Email is required</div>
+                                    <div class="error" v-if="!$v.newemail.email">Email must be valid</div>
+									
+                                    <input type="password" placeholder="Password" v-model="newpassword" v-model.trim="$v.newpassword.$model" name="newpassword" id="newpassword" class="form-control" :class="{ 'input-error': $v.newpassword.$error }"/>
+                                    <div class="error" v-if="!$v.newpassword.required">Password is required</div>
+									
+                                    <input type="password" placeholder="Confirm Password" v-model="confirmPassword" v-model.trim="$v.confirmPassword.$model" name="confirmpassword" id="confirmpassword" class="form-control" :class="{ 'input-error': $v.confirmPassword.$error }"/>
+                                    <div class="error" v-if="!$v.confirmPassword.required">Confirm Password is required</div>
+                                    <div class="error" v-if="!$v.confirmPassword.sameAsPassword">Passwords must match</div>
+									
+                                    <button type="button" @click="registerAction">Sign Up</button>
 								</form>
 							</div> 
 					</div>
@@ -29,6 +38,9 @@
     </div>
 </template>
 <script>
+
+import { required, email, minLength, between, sameAs } from 'vuelidate/lib/validators'
+
 export default {
 	name:'register',
 	data() {
@@ -38,27 +50,53 @@ export default {
 			newpassword: '',
 			errors:'',
             serverErrors:'',
-            successMessage:''
+            successMessage:'',
+            submitStatus:null,
+            confirmPassword:''
 		}
 	},
+    validations: {
+        username: {
+            required       
+        },
+        newemail: {
+            required,
+            email       
+        },
+        newpassword: {
+            required,
+            minLength: minLength(4)
+        },
+        confirmPassword: { 
+            required, 
+            sameAsPassword: sameAs('newpassword') }
+    },
     mounted() {
 		jQuery('body').removeClass('is-menu-visible');
 	},
 	methods: {
          registerAction() {
-			this.$store.dispatch("userRegister", {
-                username: this.username,
-                newemail: this.newemail,
-				newpassword: this.newpassword
-			})
-			.then(response => {
-				this.successMessage = "Registered Successfully!"
-				//this.$router.push({name:'register'})
-				console.log('user registered')
-			})
-			.catch(error => {
-				this.serverErrors = object.values(errors.data.error)
-			})
+            this.$v.$touch()
+            //login action code here
+            if (this.$v.$invalid) {
+                this.submitStatus = 'ERROR'
+                console.log(this.submitStatus)
+            } else {
+                this.$store.dispatch("userRegister", {
+                    username: this.username,
+                    newemail: this.newemail,
+                    newpassword: this.newpassword
+                })
+                .then(response => {
+                    this.successMessage = "Registered Successfully!"
+                    //this.$router.push({name:'register'})
+                    console.log('user registered')
+                })
+                .catch(error => {
+                    this.serverErrors = object.values(errors.data.error)
+                })
+            }
+            
 		}
     }
 }
@@ -72,6 +110,12 @@ export default {
         box-shadow: 0 15px 30px rgba(0, 0, 0, .0),
                     0 10px 10px rgba(0, 0, 0, .0);
         background: linear-gradient(to bottom,#5f1d1d54, rgba(189, 131, 131, 0.5));
+    }
+    .error{
+        color: red;
+    }
+    .input-error{
+        border: 1px solid red;
     }
     h2{
         margin: 0;

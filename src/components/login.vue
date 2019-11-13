@@ -5,8 +5,15 @@
                 <form class="sign-in">
                     <h2>Sign In</h2>
                     <div>Use your account</div>
-                    <input type="email" placeholder="Email" v-model="email" name="email" id="email" class="form-control"/>
-                    <input type="password" placeholder="Password" v-model="password" name="password" id="password" class="form-control"/>
+                    
+                    <input type="email" placeholder="Email" v-model="email" v-model.trim="$v.email.$model" name="email" id="email" class="form-control" :class="{ 'input-error': $v.email.$error }"/>
+                    <div class="error" v-if="!$v.email.required">Email is required</div>
+                    <div class="error" v-if="!$v.email.email">Enter must be a valid</div>
+                   
+                    <input type="password" placeholder="Password" v-model="password" v-model.trim="$v.password.$model" name="password" id="password" class="form-control" :class="{ 'input-error': $v.password.$error }" />
+                    <div class="error" v-if="!$v.password.required">Password is required</div>
+                    <div class="error" v-if="!$v.password.minLength">Name must have at least {{$v.password.$params.minLength.min}} letters.</div>
+                    
                     <a href="#">Forgot Password?</a>
                     <button type="button" @click="loginAction">Sign In</button>
                 </form>
@@ -16,13 +23,25 @@
 </template>
 <script>
 //import axios from 'axios';
+import { required, email, minLength, between } from 'vuelidate/lib/validators'
 
 export default {
     data () {
 		return {
             email:'',
-            password:''
+            password:'',
+            submitStatus: null
 		}
+    },
+    validations: {
+        email: {
+            required,
+            email       
+        },
+        password: {
+            required,
+            minLength: minLength(4)
+        }
     },
     created() {
         this.$store.subscribe((mutation, state) => {
@@ -36,40 +55,27 @@ export default {
 	},  
 	methods: {
         loginAction(){
-            console.log(this.email+"==="+this.password);
+            console.log('submit!')
+            this.$v.$touch()
             //login action code here
-            this.$store.dispatch('getToken',{
-                email: this.email,
-                password: this.password
-            })
-            .then(response => {
-                console.log('get success');
-                console.log(response);
-                
-                this.$router.push('/')
-            })
-        },
-        /*async login (e) {
-            console.log('submit');
-            this.submitted = true;
-            const { email, password } = this;
-            if (email && password) {
-               return axios.post('/login',{email,password})
-                .then(res => {
-                    console.log(res.data);
-                    localStorage.setItem('token', res.data.data.token);
-                    localStorage.setItem('uid', res.data.data.id);
-                    this.$router.push('/');
+            if (this.$v.$invalid) {
+                this.submitStatus = 'ERROR'
+                console.log(this.submitStatus)
+            } else {
+                // do your submit logic here
+                this.submitStatus = 'OK'
+                this.$store.dispatch('getToken',{
+                    email: this.email,
+                    password: this.password
+                })
+                .then(response => {
+                    console.log('get success');
+                    console.log(response);
+                    
+                    this.$router.push('/')
                 })
             }
         },
-        async checklogin(){
-            let toekn = localStorage.getItem('token');
-            //console.log('====>'+val);
-            if(toekn){
-                this.$router.push('/');
-            }
-        }*/
     }
     
 }
@@ -85,6 +91,12 @@ export default {
         box-shadow: 0 15px 30px rgba(0, 0, 0, .0),
                     0 10px 10px rgba(0, 0, 0, .0);
         background: linear-gradient(to bottom,#5f1d1d54, rgba(189, 131, 131, 0.5));
+    }
+    .error{
+        color: red;
+    }
+    .input-error{
+        border: 1px solid red;
     }
     h2{
         margin: 0;

@@ -5,8 +5,10 @@ import App from './App';
 import router from './router';
 import axios from 'axios';
 import store from './store';
-import VeeValidate from 'vee-validate';
+//import VeeValidate from 'vee-validate';
+import Vuelidate from 'vuelidate'
 
+Vue.use(Vuelidate)
 
 require('../static/css/main.css');
 //
