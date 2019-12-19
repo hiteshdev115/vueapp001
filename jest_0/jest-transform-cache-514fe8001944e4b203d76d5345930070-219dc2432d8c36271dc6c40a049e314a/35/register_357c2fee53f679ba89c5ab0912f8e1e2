@@ -1,0 +1,113 @@
+9c59fbbb0cda630ba0fa1086666ce465
+;(function(){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _validators = require('vuelidate/lib/validators');
+
+exports.default = {
+    name: 'register',
+    data: function data() {
+        return {
+            username: '',
+            newemail: '',
+            newpassword: '',
+            errors: '',
+            serverErrors: '',
+            successMessage: '',
+            submitStatus: null,
+            confirmPassword: ''
+        };
+    },
+
+    validations: {
+        username: {
+            required: _validators.required
+        },
+        newemail: {
+            required: _validators.required,
+            email: _validators.email
+        },
+        newpassword: {
+            required: _validators.required,
+            minLength: (0, _validators.minLength)(4)
+        },
+        confirmPassword: {
+            required: _validators.required,
+            sameAsPassword: (0, _validators.sameAs)('newpassword') }
+    },
+    mounted: function mounted() {
+        jQuery('body').removeClass('is-menu-visible');
+    },
+
+    methods: {
+        registerAction: function registerAction() {
+            var _this = this;
+
+            this.$v.$touch();
+            //login action code here
+            if (this.$v.$invalid) {
+                this.submitStatus = 'ERROR';
+                console.log(this.submitStatus);
+            } else {
+                this.$store.dispatch("userRegister", {
+                    username: this.username,
+                    newemail: this.newemail,
+                    newpassword: this.newpassword
+                }).then(function (response) {
+                    _this.successMessage = "Registered Successfully!";
+                    //this.$router.push({name:'register'})
+                    console.log('user registered');
+                }).catch(function (error) {
+                    _this.serverErrors = object.values(errors.data.error);
+                });
+            }
+        }
+    }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._m(0),_vm._v(" "),_c('section',{attrs:{"id":"main"}},[_c('div',[_c('div',{staticClass:"container"},[_c('div',{staticClass:"login"},[_c('form',{staticClass:"sign-in"},[_c('h2',[_vm._v("Sign Up")]),_vm._v(" "),_c('div',{staticClass:"alert alert-success",attrs:{"role":"alert"}},[_vm._v("\n                                        "+_vm._s(_vm.successMessage)+"\n                                    ")]),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.username),expression:"username"},{name:"model",rawName:"v-model.trim",value:(_vm.$v.username.$model),expression:"$v.username.$model",modifiers:{"trim":true}}],staticClass:"form-control",class:{ 'input-error': _vm.$v.username.$error },attrs:{"type":"text","placeholder":"Name","name":"username","id":"username"},domProps:{"value":(_vm.username),"value":(_vm.$v.username.$model)},on:{"input":[function($event){if($event.target.composing){ return; }_vm.$set(_vm.$v.username, "$model", $event.target.value.trim())},function($event){if($event.target.composing){ return; }_vm.username=$event.target.value}],"blur":function($event){return _vm.$forceUpdate()}}}),_vm._v(" "),(!_vm.$v.username.required)?_c('div',{staticClass:"error"},[_vm._v("Username is required")]):_vm._e(),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.newemail),expression:"newemail"},{name:"model",rawName:"v-model.trim",value:(_vm.$v.newemail.$model),expression:"$v.newemail.$model",modifiers:{"trim":true}}],staticClass:"form-control",class:{ 'input-error': _vm.$v.newemail.$error },attrs:{"type":"email","placeholder":"Email","name":"newemail","id":"newemail"},domProps:{"value":(_vm.newemail),"value":(_vm.$v.newemail.$model)},on:{"input":[function($event){if($event.target.composing){ return; }_vm.$set(_vm.$v.newemail, "$model", $event.target.value.trim())},function($event){if($event.target.composing){ return; }_vm.newemail=$event.target.value}],"blur":function($event){return _vm.$forceUpdate()}}}),_vm._v(" "),(!_vm.$v.newemail.required)?_c('div',{staticClass:"error"},[_vm._v("Email is required")]):_vm._e(),_vm._v(" "),(!_vm.$v.newemail.email)?_c('div',{staticClass:"error"},[_vm._v("Email must be valid")]):_vm._e(),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.newpassword),expression:"newpassword"},{name:"model",rawName:"v-model.trim",value:(_vm.$v.newpassword.$model),expression:"$v.newpassword.$model",modifiers:{"trim":true}}],staticClass:"form-control",class:{ 'input-error': _vm.$v.newpassword.$error },attrs:{"type":"password","placeholder":"Password","name":"newpassword","id":"newpassword"},domProps:{"value":(_vm.newpassword),"value":(_vm.$v.newpassword.$model)},on:{"input":[function($event){if($event.target.composing){ return; }_vm.$set(_vm.$v.newpassword, "$model", $event.target.value.trim())},function($event){if($event.target.composing){ return; }_vm.newpassword=$event.target.value}],"blur":function($event){return _vm.$forceUpdate()}}}),_vm._v(" "),(!_vm.$v.newpassword.required)?_c('div',{staticClass:"error"},[_vm._v("Password is required")]):_vm._e(),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.confirmPassword),expression:"confirmPassword"},{name:"model",rawName:"v-model.trim",value:(_vm.$v.confirmPassword.$model),expression:"$v.confirmPassword.$model",modifiers:{"trim":true}}],staticClass:"form-control",class:{ 'input-error': _vm.$v.confirmPassword.$error },attrs:{"type":"password","placeholder":"Confirm Password","name":"confirmpassword","id":"confirmpassword"},domProps:{"value":(_vm.confirmPassword),"value":(_vm.$v.confirmPassword.$model)},on:{"input":[function($event){if($event.target.composing){ return; }_vm.$set(_vm.$v.confirmPassword, "$model", $event.target.value.trim())},function($event){if($event.target.composing){ return; }_vm.confirmPassword=$event.target.value}],"blur":function($event){return _vm.$forceUpdate()}}}),_vm._v(" "),(!_vm.$v.confirmPassword.required)?_c('div',{staticClass:"error"},[_vm._v("Confirm Password is required")]):_vm._e(),_vm._v(" "),(!_vm.$v.confirmPassword.sameAsPassword)?_c('div',{staticClass:"error"},[_vm._v("Passwords must match")]):_vm._e(),_vm._v(" "),_c('button',{attrs:{"type":"button"},on:{"click":_vm.registerAction}},[_vm._v("Sign Up")])])])])])])])}
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"heading"}},[_c('h1',[_vm._v("User Registration")])])}]

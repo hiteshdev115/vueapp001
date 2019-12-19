@@ -1,0 +1,49 @@
+c15f930ab747f5fa008f070d14089594
+;(function(){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+exports.default = {};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('footer',{attrs:{"id":"footer"}},[_c('div',{staticClass:"inner"},[_c('div',{staticClass:"content"},[_c('section',[_c('h3',[_vm._v("Accumsan montes viverra")]),_vm._v(" "),_c('p',[_vm._v("Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.")])]),_vm._v(" "),_c('section',[_c('h4',[_vm._v("Sem turpis amet semper")]),_vm._v(" "),_c('ul',{staticClass:"alt"},[_c('li',[_c('a',{attrs:{"href":"#"}},[_vm._v("Dolor pulvinar sed etiam.")])]),_vm._v(" "),_c('li',[_c('a',{attrs:{"href":"#"}},[_vm._v("Etiam vel lorem sed amet.")])]),_vm._v(" "),_c('li',[_c('a',{attrs:{"href":"#"}},[_vm._v("Felis enim feugiat viverra.")])]),_vm._v(" "),_c('li',[_c('a',{attrs:{"href":"#"}},[_vm._v("Dolor pulvinar magna etiam.")])])])]),_vm._v(" "),_c('section',[_c('h4',[_vm._v("Magna sed ipsum")]),_vm._v(" "),_c('ul',{staticClass:"plain"},[_c('li',[_c('a',{attrs:{"href":"#"}},[_c('i',{staticClass:"icon fa-twitter"},[_vm._v(" ")]),_vm._v("Twitter")])]),_vm._v(" "),_c('li',[_c('a',{attrs:{"href":"#"}},[_c('i',{staticClass:"icon fa-facebook"},[_vm._v(" ")]),_vm._v("Facebook")])]),_vm._v(" "),_c('li',[_c('a',{attrs:{"href":"#"}},[_c('i',{staticClass:"icon fa-instagram"},[_vm._v(" ")]),_vm._v("Instagram")])]),_vm._v(" "),_c('li',[_c('a',{attrs:{"href":"#"}},[_c('i',{staticClass:"icon fa-github"},[_vm._v(" ")]),_vm._v("Github")])])])])])])])])}]

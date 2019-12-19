@@ -1,0 +1,96 @@
+601945f3a706f4db4b236175747f859c
+;(function(){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _validators = require('vuelidate/lib/validators');
+
+exports.default = {
+    data: function data() {
+        return {
+            email: '',
+            password: '',
+            submitStatus: null
+        };
+    },
+
+    validations: {
+        email: {
+            required: _validators.required,
+            email: _validators.email
+        },
+        password: {
+            required: _validators.required,
+            minLength: (0, _validators.minLength)(4)
+        }
+    },
+    created: function created() {
+        this.$store.subscribe(function (mutation, state) {
+            console.log("mutation type:-" + mutation.type);
+        });
+    },
+    mounted: function mounted() {
+        //alert('home');
+        jQuery('body').removeClass('is-menu-visible');
+        //this.checklogin();
+    },
+
+    methods: {
+        loginAction: function loginAction() {
+            var _this = this;
+
+            console.log('submit!');
+            this.$v.$touch();
+            //login action code here
+            if (this.$v.$invalid) {
+                this.submitStatus = 'ERROR';
+                console.log(this.submitStatus);
+            } else {
+                // do your submit logic here
+                this.submitStatus = 'OK';
+                this.$store.dispatch('getToken', {
+                    email: this.email,
+                    password: this.password
+                }).then(function (response) {
+                    console.log('get success');
+                    console.log(response);
+
+                    _this.$router.push('/');
+                });
+            }
+        }
+    }
+
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+//import axios from 'axios';
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('article',[_c('div',{staticClass:"container"},[_c('div',{staticClass:"login"},[_c('form',{staticClass:"sign-in"},[_c('h2',[_vm._v("Sign In")]),_vm._v(" "),_c('div',[_vm._v("Use your account")]),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.email),expression:"email"},{name:"model",rawName:"v-model.trim",value:(_vm.$v.email.$model),expression:"$v.email.$model",modifiers:{"trim":true}}],staticClass:"form-control",class:{ 'input-error': _vm.$v.email.$error },attrs:{"type":"email","placeholder":"Email","name":"email","id":"email"},domProps:{"value":(_vm.email),"value":(_vm.$v.email.$model)},on:{"input":[function($event){if($event.target.composing){ return; }_vm.$set(_vm.$v.email, "$model", $event.target.value.trim())},function($event){if($event.target.composing){ return; }_vm.email=$event.target.value}],"blur":function($event){return _vm.$forceUpdate()}}}),_vm._v(" "),(!_vm.$v.email.required)?_c('div',{staticClass:"error"},[_vm._v("Email is required")]):_vm._e(),_vm._v(" "),(!_vm.$v.email.email)?_c('div',{staticClass:"error"},[_vm._v("Enter must be a valid")]):_vm._e(),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.password),expression:"password"},{name:"model",rawName:"v-model.trim",value:(_vm.$v.password.$model),expression:"$v.password.$model",modifiers:{"trim":true}}],staticClass:"form-control",class:{ 'input-error': _vm.$v.password.$error },attrs:{"type":"password","placeholder":"Password","name":"password","id":"password"},domProps:{"value":(_vm.password),"value":(_vm.$v.password.$model)},on:{"input":[function($event){if($event.target.composing){ return; }_vm.$set(_vm.$v.password, "$model", $event.target.value.trim())},function($event){if($event.target.composing){ return; }_vm.password=$event.target.value}],"blur":function($event){return _vm.$forceUpdate()}}}),_vm._v(" "),(!_vm.$v.password.required)?_c('div',{staticClass:"error"},[_vm._v("Password is required")]):_vm._e(),_vm._v(" "),(!_vm.$v.password.minLength)?_c('div',{staticClass:"error"},[_vm._v("Name must have at least "+_vm._s(_vm.$v.password.$params.minLength.min)+" letters.")]):_vm._e(),_vm._v(" "),_c('a',{attrs:{"href":"#"}},[_vm._v("Forgot Password?")]),_vm._v(" "),_c('button',{attrs:{"type":"button"},on:{"click":_vm.loginAction}},[_vm._v("Sign In")])])])])])}
+__vue__options__.staticRenderFns = []

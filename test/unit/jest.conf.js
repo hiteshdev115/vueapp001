@@ -1,7 +1,9 @@
 const path = require('path')
 
+
 module.exports = {
   rootDir: path.resolve(__dirname, '../../'),
+  testEnvironment: 'node',
   moduleFileExtensions: [
     'js',
     'json',
@@ -26,5 +28,9 @@ module.exports = {
     '!src/main.js',
     '!src/router/index.js',
     '!**/node_modules/**'
-  ]
+  ],
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/"
+  }
 }

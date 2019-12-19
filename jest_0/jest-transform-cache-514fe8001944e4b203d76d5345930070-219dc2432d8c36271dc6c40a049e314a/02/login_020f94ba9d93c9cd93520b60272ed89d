@@ -1,0 +1,97 @@
+edb33719ad6b356cb732df04c3e415d9
+/* istanbul ignore next */var cov_wzkbalwso = function () {var path = '/var/www/html/vueapp01/src/components/login.vue',hash = 'fff452e016f6489ba6c9a2e7ebb2e8922d63ba16',Function = function () {}.constructor,global = new Function('return this')(),gcv = '__coverage__',coverageData = { path: '/var/www/html/vueapp01/src/components/login.vue', statementMap: { '0': { start: { line: 1, column: 1 }, end: { line: 92, column: 4 } }, '1': { start: { line: 4, column: 0 }, end: { line: 6, column: 3 } }, '2': { start: { line: 8, column: 18 }, end: { line: 8, column: 53 } }, '3': { start: { line: 10, column: 0 }, end: { line: 67, column: 2 } }, '4': { start: { line: 12, column: 8 }, end: { line: 17, column: 10 } }, '5': { start: { line: 31, column: 8 }, end: { line: 33, column: 11 } }, '6': { start: { line: 32, column: 12 }, end: { line: 32, column: 59 } }, '7': { start: { line: 37, column: 8 }, end: { line: 37, column: 54 } }, '8': { start: { line: 43, column: 24 }, end: { line: 43, column: 28 } }, '9': { start: { line: 45, column: 12 }, end: { line: 45, column: 35 } }, '10': { start: { line: 46, column: 12 }, end: { line: 46, column: 29 } }, '11': { start: { line: 48, column: 12 }, end: { line: 63, column: 13 } }, '12': { start: { line: 49, column: 16 }, end: { line: 49, column: 44 } }, '13': { start: { line: 50, column: 16 }, end: { line: 50, column: 47 } }, '14': { start: { line: 53, column: 16 }, end: { line: 53, column: 41 } }, '15': { start: { line: 54, column: 16 }, end: { line: 62, column: 19 } }, '16': { start: { line: 58, column: 20 }, end: { line: 58, column: 47 } }, '17': { start: { line: 59, column: 20 }, end: { line: 59, column: 42 } }, '18': { start: { line: 60, column: 20 }, end: { line: 60, column: 62 } }, '19': { start: { line: 93, column: 0 }, end: { line: 93, column: 70 } }, '20': { start: { line: 93, column: 31 }, end: { line: 93, column: 70 } }, '21': { start: { line: 94, column: 24 }, end: { line: 94, column: 100 } }, '22': { start: { line: 95, column: 0 }, end: { line: 95, column: 2560 } }, '23': { start: { line: 95, column: 54 }, end: { line: 95, column: 58 } }, '24': { start: { line: 95, column: 66 }, end: { line: 95, column: 84 } }, '25': { start: { line: 95, column: 92 }, end: { line: 95, column: 108 } }, '26': { start: { line: 95, column: 109 }, end: { line: 95, column: 2559 } }, '27': { start: { line: 95, column: 872 }, end: { line: 95, column: 910 } }, '28': { start: { line: 95, column: 901 }, end: { line: 95, column: 908 } }, '29': { start: { line: 95, column: 910 }, end: { line: 95, column: 970 } }, '30': { start: { line: 95, column: 989 }, end: { line: 95, column: 1027 } }, '31': { start: { line: 95, column: 1018 }, end: { line: 95, column: 1025 } }, '32': { start: { line: 95, column: 1027 }, end: { line: 95, column: 1056 } }, '33': { start: { line: 95, column: 1083 }, end: { line: 95, column: 1108 } }, '34': { start: { line: 95, column: 1844 }, end: { line: 95, column: 1882 } }, '35': { start: { line: 95, column: 1873 }, end: { line: 95, column: 1880 } }, '36': { start: { line: 95, column: 1882 }, end: { line: 95, column: 1945 } }, '37': { start: { line: 95, column: 1964 }, end: { line: 95, column: 2002 } }, '38': { start: { line: 95, column: 1993 }, end: { line: 95, column: 2000 } }, '39': { start: { line: 95, column: 2002 }, end: { line: 95, column: 2034 } }, '40': { start: { line: 95, column: 2061 }, end: { line: 95, column: 2086 } }, '41': { start: { line: 96, column: 0 }, end: { line: 96, column: 37 } } }, fnMap: { '0': { name: '(anonymous_0)', decl: { start: { line: 1, column: 2 }, end: { line: 1, column: 3 } }, loc: { start: { line: 1, column: 12 }, end: { line: 92, column: 1 } }, line: 1 }, '1': { name: 'data', decl: { start: { line: 11, column: 19 }, end: { line: 11, column: 23 } }, loc: { start: { line: 11, column: 26 }, end: { line: 18, column: 5 } }, line: 11 }, '2': { name: 'created', decl: { start: { line: 30, column: 22 }, end: { line: 30, column: 29 } }, loc: { start: { line: 30, column: 32 }, end: { line: 34, column: 5 } }, line: 30 }, '3': { name: '(anonymous_3)', decl: { start: { line: 31, column: 30 }, end: { line: 31, column: 31 } }, loc: { start: { line: 31, column: 57 }, end: { line: 33, column: 9 } }, line: 31 }, '4': { name: 'mounted', decl: { start: { line: 35, column: 22 }, end: { line: 35, column: 29 } }, loc: { start: { line: 35, column: 32 }, end: { line: 39, column: 5 } }, line: 35 }, '5': { name: 'loginAction', decl: { start: { line: 42, column: 30 }, end: { line: 42, column: 41 } }, loc: { start: { line: 42, column: 44 }, end: { line: 64, column: 9 } }, line: 42 }, '6': { name: '(anonymous_6)', decl: { start: { line: 57, column: 24 }, end: { line: 57, column: 25 } }, loc: { start: { line: 57, column: 44 }, end: { line: 62, column: 17 } }, line: 57 }, '7': { name: 'render', decl: { start: { line: 95, column: 35 }, end: { line: 95, column: 41 } }, loc: { start: { line: 95, column: 45 }, end: { line: 95, column: 2560 } }, line: 95 }, '8': { name: '(anonymous_8)', decl: { start: { line: 95, column: 855 }, end: { line: 95, column: 856 } }, loc: { start: { line: 95, column: 871 }, end: { line: 95, column: 971 } }, line: 95 }, '9': { name: '(anonymous_9)', decl: { start: { line: 95, column: 972 }, end: { line: 95, column: 973 } }, loc: { start: { line: 95, column: 988 }, end: { line: 95, column: 1057 } }, line: 95 }, '10': { name: '(anonymous_10)', decl: { start: { line: 95, column: 1066 }, end: { line: 95, column: 1067 } }, loc: { start: { line: 95, column: 1082 }, end: { line: 95, column: 1109 } }, line: 95 }, '11': { name: '(anonymous_11)', decl: { start: { line: 95, column: 1827 }, end: { line: 95, column: 1828 } }, loc: { start: { line: 95, column: 1843 }, end: { line: 95, column: 1946 } }, line: 95 }, '12': { name: '(anonymous_12)', decl: { start: { line: 95, column: 1947 }, end: { line: 95, column: 1948 } }, loc: { start: { line: 95, column: 1963 }, end: { line: 95, column: 2035 } }, line: 95 }, '13': { name: '(anonymous_13)', decl: { start: { line: 95, column: 2044 }, end: { line: 95, column: 2045 } }, loc: { start: { line: 95, column: 2060 }, end: { line: 95, column: 2087 } }, line: 95 } }, branchMap: { '0': { loc: { start: { line: 48, column: 12 }, end: { line: 63, column: 13 } }, type: 'if', locations: [{ start: { line: 48, column: 12 }, end: { line: 63, column: 13 } }, { start: { line: 48, column: 12 }, end: { line: 63, column: 13 } }], line: 48 }, '1': { loc: { start: { line: 93, column: 0 }, end: { line: 93, column: 70 } }, type: 'if', locations: [{ start: { line: 93, column: 0 }, end: { line: 93, column: 70 } }, { start: { line: 93, column: 0 }, end: { line: 93, column: 70 } }], line: 93 }, '2': { loc: { start: { line: 94, column: 24 }, end: { line: 94, column: 100 } }, type: 'cond-expr', locations: [{ start: { line: 94, column: 62 }, end: { line: 94, column: 84 } }, { start: { line: 94, column: 86 }, end: { line: 94, column: 100 } }], line: 94 }, '3': { loc: { start: { line: 95, column: 92 }, end: { line: 95, column: 108 } }, type: 'binary-expr', locations: [{ start: { line: 95, column: 92 }, end: { line: 95, column: 104 } }, { start: { line: 95, column: 106 }, end: { line: 95, column: 108 } }], line: 95 }, '4': { loc: { start: { line: 95, column: 872 }, end: { line: 95, column: 910 } }, type: 'if', locations: [{ start: { line: 95, column: 872 }, end: { line: 95, column: 910 } }, { start: { line: 95, column: 872 }, end: { line: 95, column: 910 } }], line: 95 }, '5': { loc: { start: { line: 95, column: 989 }, end: { line: 95, column: 1027 } }, type: 'if', locations: [{ start: { line: 95, column: 989 }, end: { line: 95, column: 1027 } }, { start: { line: 95, column: 989 }, end: { line: 95, column: 1027 } }], line: 95 }, '6': { loc: { start: { line: 95, column: 1125 }, end: { line: 95, column: 1220 } }, type: 'cond-expr', locations: [{ start: { line: 95, column: 1150 }, end: { line: 95, column: 1211 } }, { start: { line: 95, column: 1212 }, end: { line: 95, column: 1220 } }], line: 95 }, '7': { loc: { start: { line: 95, column: 1233 }, end: { line: 95, column: 1329 } }, type: 'cond-expr', locations: [{ start: { line: 95, column: 1255 }, end: { line: 95, column: 1320 } }, { start: { line: 95, column: 1321 }, end: { line: 95, column: 1329 } }], line: 95 }, '8': { loc: { start: { line: 95, column: 1844 }, end: { line: 95, column: 1882 } }, type: 'if', locations: [{ start: { line: 95, column: 1844 }, end: { line: 95, column: 1882 } }, { start: { line: 95, column: 1844 }, end: { line: 95, column: 1882 } }], line: 95 }, '9': { loc: { start: { line: 95, column: 1964 }, end: { line: 95, column: 2002 } }, type: 'if', locations: [{ start: { line: 95, column: 1964 }, end: { line: 95, column: 2002 } }, { start: { line: 95, column: 1964 }, end: { line: 95, column: 2002 } }], line: 95 }, '10': { loc: { start: { line: 95, column: 2103 }, end: { line: 95, column: 2204 } }, type: 'cond-expr', locations: [{ start: { line: 95, column: 2131 }, end: { line: 95, column: 2195 } }, { start: { line: 95, column: 2196 }, end: { line: 95, column: 2204 } }], line: 95 }, '11': { loc: { start: { line: 95, column: 2217 }, end: { line: 95, column: 2381 } }, type: 'cond-expr', locations: [{ start: { line: 95, column: 2246 }, end: { line: 95, column: 2372 } }, { start: { line: 95, column: 2373 }, end: { line: 95, column: 2381 } }], line: 95 } }, s: { '0': 0, '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 0, '9': 0, '10': 0, '11': 0, '12': 0, '13': 0, '14': 0, '15': 0, '16': 0, '17': 0, '18': 0, '19': 0, '20': 0, '21': 0, '22': 0, '23': 0, '24': 0, '25': 0, '26': 0, '27': 0, '28': 0, '29': 0, '30': 0, '31': 0, '32': 0, '33': 0, '34': 0, '35': 0, '36': 0, '37': 0, '38': 0, '39': 0, '40': 0, '41': 0 }, f: { '0': 0, '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 0, '9': 0, '10': 0, '11': 0, '12': 0, '13': 0 }, b: { '0': [0, 0], '1': [0, 0], '2': [0, 0], '3': [0, 0], '4': [0, 0], '5': [0, 0], '6': [0, 0], '7': [0, 0], '8': [0, 0], '9': [0, 0], '10': [0, 0], '11': [0, 0] }, _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c' },coverage = global[gcv] || (global[gcv] = {});if (coverage[path] && coverage[path].hash === hash) {return coverage[path];}coverageData.hash = hash;return coverage[path] = coverageData;}();; /* istanbul ignore next */cov_wzkbalwso.s[0]++;(function () {
+    'use strict'; /* istanbul ignore next */cov_wzkbalwso.f[0]++;cov_wzkbalwso.s[1]++;
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true });
+
+
+    var _validators = /* istanbul ignore next */(cov_wzkbalwso.s[2]++, require('vuelidate/lib/validators')); /* istanbul ignore next */cov_wzkbalwso.s[3]++;
+
+    exports.default = {
+        data: function data() {/* istanbul ignore next */cov_wzkbalwso.f[1]++;cov_wzkbalwso.s[4]++;
+            return {
+                email: '',
+                password: '',
+                submitStatus: null,
+                succMessage: '' };
+
+        },
+
+        validations: {
+            email: {
+                required: _validators.required,
+                email: _validators.email },
+
+            password: {
+                required: _validators.required,
+                minLength: (0, _validators.minLength)(4) } },
+
+
+        created: function created() {/* istanbul ignore next */cov_wzkbalwso.f[2]++;cov_wzkbalwso.s[5]++;
+            this.$store.subscribe(function (mutation, state) {/* istanbul ignore next */cov_wzkbalwso.f[3]++;cov_wzkbalwso.s[6]++;
+                console.log("mutation type:-" + mutation.type);
+            });
+        },
+        mounted: function mounted() {/* istanbul ignore next */cov_wzkbalwso.f[4]++;cov_wzkbalwso.s[7]++;
+            //alert('home');
+            jQuery('body').removeClass('is-menu-visible');
+            //this.checklogin();
+        },
+
+        methods: {
+            loginAction: function loginAction() {/* istanbul ignore next */cov_wzkbalwso.f[5]++;
+                var _this = /* istanbul ignore next */(cov_wzkbalwso.s[8]++, this); /* istanbul ignore next */cov_wzkbalwso.s[9]++;
+
+                console.log('submit!'); /* istanbul ignore next */cov_wzkbalwso.s[10]++;
+                this.$v.$touch();
+                //login action code here
+                /* istanbul ignore next */cov_wzkbalwso.s[11]++;if (this.$v.$invalid) {/* istanbul ignore next */cov_wzkbalwso.b[0][0]++;cov_wzkbalwso.s[12]++;
+                    this.submitStatus = 'ERROR'; /* istanbul ignore next */cov_wzkbalwso.s[13]++;
+                    console.log(this.submitStatus);
+                } else {/* istanbul ignore next */cov_wzkbalwso.b[0][1]++;cov_wzkbalwso.s[14]++;
+                    // do your submit logic here
+                    this.submitStatus = 'OK'; /* istanbul ignore next */cov_wzkbalwso.s[15]++;
+                    this.$store.dispatch('getToken', {
+                        email: this.email,
+                        password: this.password }).
+                    then(function (response) {/* istanbul ignore next */cov_wzkbalwso.f[6]++;cov_wzkbalwso.s[16]++;
+                        console.log('get success'); /* istanbul ignore next */cov_wzkbalwso.s[17]++;
+                        console.log(response); /* istanbul ignore next */cov_wzkbalwso.s[18]++;
+                        _this.succMessage = "Login Successfully!";
+                        //this.$router.push('/')
+                    });
+                }
+            } } };
+
+
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+
+    //import axios from 'axios';
+})(); /* istanbul ignore next */cov_wzkbalwso.s[19]++;
+if (module.exports.__esModule) {/* istanbul ignore next */cov_wzkbalwso.b[1][0]++;cov_wzkbalwso.s[20]++;module.exports = module.exports.default;} else /* istanbul ignore next */{cov_wzkbalwso.b[1][1]++;}
+var __vue__options__ = /* istanbul ignore next */(cov_wzkbalwso.s[21]++, typeof module.exports === "function" ? /* istanbul ignore next */(cov_wzkbalwso.b[2][0]++, module.exports.options) : /* istanbul ignore next */(cov_wzkbalwso.b[2][1]++, module.exports)); /* istanbul ignore next */cov_wzkbalwso.s[22]++;
+__vue__options__.render = function render() {/* istanbul ignore next */cov_wzkbalwso.f[7]++;var _vm = /* istanbul ignore next */(cov_wzkbalwso.s[23]++, this);var _h = /* istanbul ignore next */(cov_wzkbalwso.s[24]++, _vm.$createElement);var _c = /* istanbul ignore next */(cov_wzkbalwso.s[25]++, /* istanbul ignore next */(cov_wzkbalwso.b[3][0]++, _vm._self._c) || /* istanbul ignore next */(cov_wzkbalwso.b[3][1]++, _h)); /* istanbul ignore next */cov_wzkbalwso.s[26]++;return _c('article', [_c('div', { staticClass: "container" }, [_c('div', { staticClass: "login" }, [_c('form', { staticClass: "sign-in" }, [_c('h2', [_vm._v("Sign In")]), _vm._v(" "), _c('div', [_vm._v("Use your account")]), _vm._v(" "), _c('div', { staticClass: "message" }, [_vm._v(_vm._s(this.succMessage))]), _vm._v(" "), _c('input', { directives: [{ name: "model", rawName: "v-model", value: _vm.email, expression: "email" }, { name: "model", rawName: "v-model.trim", value: _vm.$v.email.$model, expression: "$v.email.$model", modifiers: { "trim": true } }], staticClass: "form-control", class: { 'input-error': _vm.$v.email.$error }, attrs: { "type": "email", "placeholder": "Email", "name": "email", "id": "email", "data-email": "" }, domProps: { "value": _vm.email, "value": _vm.$v.email.$model }, on: { "input": [function ($event) {/* istanbul ignore next */cov_wzkbalwso.f[8]++;cov_wzkbalwso.s[27]++;if ($event.target.composing) {/* istanbul ignore next */cov_wzkbalwso.b[4][0]++;cov_wzkbalwso.s[28]++;return;} else /* istanbul ignore next */{cov_wzkbalwso.b[4][1]++;}cov_wzkbalwso.s[29]++;_vm.$set(_vm.$v.email, "$model", $event.target.value.trim());}, function ($event) {/* istanbul ignore next */cov_wzkbalwso.f[9]++;cov_wzkbalwso.s[30]++;if ($event.target.composing) {/* istanbul ignore next */cov_wzkbalwso.b[5][0]++;cov_wzkbalwso.s[31]++;return;} else /* istanbul ignore next */{cov_wzkbalwso.b[5][1]++;}cov_wzkbalwso.s[32]++;_vm.email = $event.target.value;}], "blur": function ($event) {/* istanbul ignore next */cov_wzkbalwso.f[10]++;cov_wzkbalwso.s[33]++;return _vm.$forceUpdate();} } }), _vm._v(" "), !_vm.$v.email.required ? /* istanbul ignore next */(cov_wzkbalwso.b[6][0]++, _c('div', { staticClass: "error" }, [_vm._v("Email is required")])) : /* istanbul ignore next */(cov_wzkbalwso.b[6][1]++, _vm._e()), _vm._v(" "), !_vm.$v.email.email ? /* istanbul ignore next */(cov_wzkbalwso.b[7][0]++, _c('div', { staticClass: "error" }, [_vm._v("Enter must be a valid")])) : /* istanbul ignore next */(cov_wzkbalwso.b[7][1]++, _vm._e()), _vm._v(" "), _c('input', { directives: [{ name: "model", rawName: "v-model", value: _vm.password, expression: "password" }, { name: "model", rawName: "v-model.trim", value: _vm.$v.password.$model, expression: "$v.password.$model", modifiers: { "trim": true } }], staticClass: "form-control", class: { 'input-error': _vm.$v.password.$error }, attrs: { "type": "password", "placeholder": "Password", "name": "password", "id": "password", "data-password": "" }, domProps: { "value": _vm.password, "value": _vm.$v.password.$model }, on: { "input": [function ($event) {/* istanbul ignore next */cov_wzkbalwso.f[11]++;cov_wzkbalwso.s[34]++;if ($event.target.composing) {/* istanbul ignore next */cov_wzkbalwso.b[8][0]++;cov_wzkbalwso.s[35]++;return;} else /* istanbul ignore next */{cov_wzkbalwso.b[8][1]++;}cov_wzkbalwso.s[36]++;_vm.$set(_vm.$v.password, "$model", $event.target.value.trim());}, function ($event) {/* istanbul ignore next */cov_wzkbalwso.f[12]++;cov_wzkbalwso.s[37]++;if ($event.target.composing) {/* istanbul ignore next */cov_wzkbalwso.b[9][0]++;cov_wzkbalwso.s[38]++;return;} else /* istanbul ignore next */{cov_wzkbalwso.b[9][1]++;}cov_wzkbalwso.s[39]++;_vm.password = $event.target.value;}], "blur": function ($event) {/* istanbul ignore next */cov_wzkbalwso.f[13]++;cov_wzkbalwso.s[40]++;return _vm.$forceUpdate();} } }), _vm._v(" "), !_vm.$v.password.required ? /* istanbul ignore next */(cov_wzkbalwso.b[10][0]++, _c('div', { staticClass: "error" }, [_vm._v("Password is required")])) : /* istanbul ignore next */(cov_wzkbalwso.b[10][1]++, _vm._e()), _vm._v(" "), !_vm.$v.password.minLength ? /* istanbul ignore next */(cov_wzkbalwso.b[11][0]++, _c('div', { staticClass: "error" }, [_vm._v("Name must have at least " + _vm._s(_vm.$v.password.$params.minLength.min) + " letters.")])) : /* istanbul ignore next */(cov_wzkbalwso.b[11][1]++, _vm._e()), _vm._v(" "), _c('a', { attrs: { "href": "#" } }, [_vm._v("Forgot Password?")]), _vm._v(" "), _c('button', { attrs: { "type": "button" }, on: { "click": _vm.loginAction } }, [_vm._v("Sign In")])])])])]);}; /* istanbul ignore next */cov_wzkbalwso.s[41]++;
+__vue__options__.staticRenderFns = [];

@@ -1,0 +1,17 @@
+02c01fc05c8056557af4376c349690e5
+'use strict';
+var _testUtils = require('@vue/test-utils');
+var _login = require('@/components/login.vue');var _login2 = _interopRequireDefault(_login);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //import Vue from 'vue'
+
+describe('login.vue', function () {
+    test('login is vue instance', function () {
+        var wrapper = (0, _testUtils.shallowMount)(_login2.default);
+
+        wrapper.find("#email").setValue("hk.121988@gmail.com");
+        wrapper.find("#password").setValue("123456");
+        wrapper.find("button").trigger("click");
+        //wrapper.vm.$nextTick();
+        expect(wrapper.find(".message").text()).toBe("Login Successfully!");
+    });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxvZ2luLnNwZWMuanMiXSwibmFtZXMiOlsiZGVzY3JpYmUiLCJ0ZXN0Iiwid3JhcHBlciIsIkNvbXBvbmVudCIsImZpbmQiLCJzZXRWYWx1ZSIsInRyaWdnZXIiLCJleHBlY3QiLCJ0ZXh0IiwidG9CZSJdLCJtYXBwaW5ncyI6IjtBQUNBO0FBQ0EsK0MsMklBRkE7O0FBSUFBLFNBQVMsV0FBVCxFQUFzQixZQUFNO0FBQ3hCQyxTQUFLLHVCQUFMLEVBQThCLFlBQU07QUFDaEMsWUFBTUMsVUFBVSw2QkFBYUMsZUFBYixDQUFoQjs7QUFFQUQsZ0JBQVFFLElBQVIsQ0FBYSxRQUFiLEVBQXVCQyxRQUF2QixDQUFnQyxxQkFBaEM7QUFDQUgsZ0JBQVFFLElBQVIsQ0FBYSxXQUFiLEVBQTBCQyxRQUExQixDQUFtQyxRQUFuQztBQUNBSCxnQkFBUUUsSUFBUixDQUFhLFFBQWIsRUFBdUJFLE9BQXZCLENBQStCLE9BQS9CO0FBQ0E7QUFDQUMsZUFBT0wsUUFBUUUsSUFBUixDQUFhLFVBQWIsRUFBeUJJLElBQXpCLEVBQVAsRUFBd0NDLElBQXhDLENBQTZDLHFCQUE3QztBQUNILEtBUkQ7QUFTSCxDQVZEIiwiZmlsZSI6ImxvZ2luLnNwZWMuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvL2ltcG9ydCBWdWUgZnJvbSAndnVlJ1xuaW1wb3J0IHsgc2hhbGxvd01vdW50IH0gZnJvbSAnQHZ1ZS90ZXN0LXV0aWxzJ1xuaW1wb3J0IENvbXBvbmVudCBmcm9tICdAL2NvbXBvbmVudHMvbG9naW4udnVlJ1xuXG5kZXNjcmliZSgnbG9naW4udnVlJywgKCkgPT4ge1xuICAgIHRlc3QoJ2xvZ2luIGlzIHZ1ZSBpbnN0YW5jZScsICgpID0+IHtcbiAgICAgICAgY29uc3Qgd3JhcHBlciA9IHNoYWxsb3dNb3VudChDb21wb25lbnQpOyAgXG5cbiAgICAgICAgd3JhcHBlci5maW5kKFwiI2VtYWlsXCIpLnNldFZhbHVlKFwiaGsuMTIxOTg4QGdtYWlsLmNvbVwiKTtcbiAgICAgICAgd3JhcHBlci5maW5kKFwiI3Bhc3N3b3JkXCIpLnNldFZhbHVlKFwiMTIzNDU2XCIpO1xuICAgICAgICB3cmFwcGVyLmZpbmQoXCJidXR0b25cIikudHJpZ2dlcihcImNsaWNrXCIpO1xuICAgICAgICAvL3dyYXBwZXIudm0uJG5leHRUaWNrKCk7XG4gICAgICAgIGV4cGVjdCh3cmFwcGVyLmZpbmQoXCIubWVzc2FnZVwiKS50ZXh0KCkpLnRvQmUoXCJMb2dpbiBTdWNjZXNzZnVsbHkhXCIpO1xuICAgIH0pXG59KVxuIl19

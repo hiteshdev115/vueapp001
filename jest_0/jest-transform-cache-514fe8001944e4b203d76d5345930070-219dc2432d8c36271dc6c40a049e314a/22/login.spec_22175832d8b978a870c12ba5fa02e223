@@ -1,0 +1,17 @@
+1588c8fcf095d47577334157bd657d9e
+'use strict';
+var _testUtils = require('@vue/test-utils');
+var _login = require('@/components/login.vue');var _login2 = _interopRequireDefault(_login);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //import Vue from 'vue'
+
+describe('Component', function () {
+    test('login is vue instance', function () {
+        var wrapper = (0, _testUtils.mount)(_login2.default);
+
+        wrapper.find("#email").setValue("hk.121988@gmail.com");
+        wrapper.find("#password").setValue("123456");
+        wrapper.find("button").trigger("click");
+        wrapper.vm.$nextTick();
+        expect(wrapper.find(".message").text()).toBe("Login Successfully!");
+    });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxvZ2luLnNwZWMuanMiXSwibmFtZXMiOlsiZGVzY3JpYmUiLCJ0ZXN0Iiwid3JhcHBlciIsIkNvbXBvbmVudCIsImZpbmQiLCJzZXRWYWx1ZSIsInRyaWdnZXIiLCJ2bSIsIiRuZXh0VGljayIsImV4cGVjdCIsInRleHQiLCJ0b0JlIl0sIm1hcHBpbmdzIjoiO0FBQ0E7QUFDQSwrQywySUFGQTs7QUFJQUEsU0FBUyxXQUFULEVBQXNCLFlBQU07QUFDeEJDLFNBQUssdUJBQUwsRUFBOEIsWUFBTTtBQUNoQyxZQUFNQyxVQUFVLHNCQUFNQyxlQUFOLENBQWhCOztBQUVBRCxnQkFBUUUsSUFBUixDQUFhLFFBQWIsRUFBdUJDLFFBQXZCLENBQWdDLHFCQUFoQztBQUNBSCxnQkFBUUUsSUFBUixDQUFhLFdBQWIsRUFBMEJDLFFBQTFCLENBQW1DLFFBQW5DO0FBQ0FILGdCQUFRRSxJQUFSLENBQWEsUUFBYixFQUF1QkUsT0FBdkIsQ0FBK0IsT0FBL0I7QUFDQUosZ0JBQVFLLEVBQVIsQ0FBV0MsU0FBWDtBQUNBQyxlQUFPUCxRQUFRRSxJQUFSLENBQWEsVUFBYixFQUF5Qk0sSUFBekIsRUFBUCxFQUF3Q0MsSUFBeEMsQ0FBNkMscUJBQTdDO0FBQ0gsS0FSRDtBQVNILENBVkQiLCJmaWxlIjoibG9naW4uc3BlYy5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vaW1wb3J0IFZ1ZSBmcm9tICd2dWUnXG5pbXBvcnQgeyBtb3VudCB9IGZyb20gJ0B2dWUvdGVzdC11dGlscydcbmltcG9ydCBDb21wb25lbnQgZnJvbSAnQC9jb21wb25lbnRzL2xvZ2luLnZ1ZSdcblxuZGVzY3JpYmUoJ0NvbXBvbmVudCcsICgpID0+IHtcbiAgICB0ZXN0KCdsb2dpbiBpcyB2dWUgaW5zdGFuY2UnLCAoKSA9PiB7XG4gICAgICAgIGNvbnN0IHdyYXBwZXIgPSBtb3VudChDb21wb25lbnQpICBcblxuICAgICAgICB3cmFwcGVyLmZpbmQoXCIjZW1haWxcIikuc2V0VmFsdWUoXCJoay4xMjE5ODhAZ21haWwuY29tXCIpXG4gICAgICAgIHdyYXBwZXIuZmluZChcIiNwYXNzd29yZFwiKS5zZXRWYWx1ZShcIjEyMzQ1NlwiKVxuICAgICAgICB3cmFwcGVyLmZpbmQoXCJidXR0b25cIikudHJpZ2dlcihcImNsaWNrXCIpXG4gICAgICAgIHdyYXBwZXIudm0uJG5leHRUaWNrKClcbiAgICAgICAgZXhwZWN0KHdyYXBwZXIuZmluZChcIi5tZXNzYWdlXCIpLnRleHQoKSkudG9CZShcIkxvZ2luIFN1Y2Nlc3NmdWxseSFcIilcbiAgICB9KVxufSlcbiJdfQ==

@@ -5,12 +5,12 @@
                 <form class="sign-in">
                     <h2>Sign In</h2>
                     <div>Use your account</div>
-                    
-                    <input type="email" placeholder="Email" v-model="email" v-model.trim="$v.email.$model" name="email" id="email" class="form-control" :class="{ 'input-error': $v.email.$error }"/>
+                    <div class="message">{{this.succMessage}}</div>
+                    <input type="email" placeholder="Email" v-model="email" v-model.trim="$v.email.$model" name="email" id="email" class="form-control" :class="{ 'input-error': $v.email.$error }" data-email/>
                     <div class="error" v-if="!$v.email.required">Email is required</div>
                     <div class="error" v-if="!$v.email.email">Enter must be a valid</div>
                    
-                    <input type="password" placeholder="Password" v-model="password" v-model.trim="$v.password.$model" name="password" id="password" class="form-control" :class="{ 'input-error': $v.password.$error }" />
+                    <input type="password" placeholder="Password" v-model="password" v-model.trim="$v.password.$model" name="password" id="password" class="form-control" :class="{ 'input-error': $v.password.$error }" data-password />
                     <div class="error" v-if="!$v.password.required">Password is required</div>
                     <div class="error" v-if="!$v.password.minLength">Name must have at least {{$v.password.$params.minLength.min}} letters.</div>
                     
@@ -30,7 +30,8 @@ export default {
 		return {
             email:'',
             password:'',
-            submitStatus: null
+            submitStatus: null,
+            succMessage:''
 		}
     },
     validations: {
@@ -71,8 +72,8 @@ export default {
                 .then(response => {
                     console.log('get success');
                     console.log(response);
-                    
-                    this.$router.push('/')
+                    this.succMessage = "Login Successfully!";
+                    //this.$router.push('/')
                 })
             }
         },

@@ -1,0 +1,1 @@
+{"version":3,"sources":["setup.js"],"names":["require","Vue","config","productionTip"],"mappings":";AACA,0B,sIADAA,QAAQ,cAAR;;AAGAC,cAAIC,MAAJ,CAAWC,aAAX,GAA2B,KAA3B","file":"setup.js","sourcesContent":["require('jsdom-global')()\nimport Vue from 'vue'\n\nVue.config.productionTip = false\n"]}

@@ -1,0 +1,45 @@
+d87cd11ff7f7f5ae5606b4be9faf9dbb
+;(function(){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+      value: true
+});
+
+var _HeaderComponent = require("@/components/HeaderComponent.vue");
+
+var _HeaderComponent2 = _interopRequireDefault(_HeaderComponent);
+
+var _FooterComonent = require("@/components/FooterComonent.vue");
+
+var _FooterComonent2 = _interopRequireDefault(_FooterComonent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+      components: {
+            'app-header': _HeaderComponent2.default,
+            'app-footer': _FooterComonent2.default
+      }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"app"}},[_c('app-header'),_vm._v(" "),_c('router-view'),_vm._v(" "),_c('app-footer')],1)}
+__vue__options__.staticRenderFns = []
